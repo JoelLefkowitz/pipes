@@ -1,0 +1,54 @@
+output_dir: .
+
+clear_top_level: true
+logical_grouping: true
+
+collections:
+  - common
+  - python
+
+loader_paths:
+  - docs
+
+protected:
+  - MANIFEST.in
+
+render_context:
+  project:
+    project_name: simple-pipes
+    version: 0.3.1
+
+    verbose_name: Simple pipes
+    description: Subprocess utils.
+
+    repository: https://github.com/JoelLefkowitz/simple-pipes
+    codacy_id: dc58dc1425df48c5be692f01029b732e
+
+    inserts:
+      - usage.md
+
+  author:
+    author: Joel Lefkowitz
+    author_email: joellefkowitz@hotmail.com
+    author_github_handle: joellefkowitz
+
+  package:
+    is_pypi_package: true
+    package_name: simple_pipes
+
+    install_requires:
+      - dataclasses
+
+  portfolio:
+    is_portfolio: true
+    status_level: 5
+
+    languages:
+      - Python
+
+    paradigms:
+      - Object oriented programming
+
+  public_keys:
+    travis_pypi: L9H4NuB3kzVtbQrIwS35J4+IoyptZ7Sio8xzynNI7FJFcMk1apyaqPPHVPpT+Qtd3DD8To6wyo8cRqFKFFEEJe4CuD3bIKpselXef408tILQt9jAGJTymtrnk+A1wx14oQYhGmwc2cNRakUhrlpPMfoQzyf3wLMrjA1oBuqhchn88UdvpvY2CLsOTo1xmNlGibDwtJIepSxrWSY6iUZfnsvwXR+lvScmOCicS2uUkqEYAid0kmfZKJhrDkVf9/cwHQ11nXYuBY2ZNh9UNE6ohKXW7zMqQ1HjzKmEa9ri0iUfLiTL+Xj6K3BclRhniS2wODY0/wBnQ6NY0LvvEEYGMYQc2nPs4jhzxSJpOl/bZqqJxfJFSI9QmWhs/uJqkvAhVczHMAePzs8UWlH/Lacf2BeqW9JIcRgXEcsdVVrKOJ16bNQ2RG0U459FDrPeHWJN5QoiuIa+JCezE9Y1zaXWC9gcJiFu60JVwTHkSuimlVwODRSnx+7BG3RSnRlYJp11QTOnt3JEMEUSqTwvhweyiEdF6uvY1GP9uAoqOUYag1xnp+6l4QUlK7j6n2kEUjGUJkwtWGmI26UmNCyyQZfqTpED0QZjw2L6iRuuHjNietuy8SaVhDiwm0XfjOL5ixIZsxc4tgkQ7NgLEaqidRj74ORd7mi9qPxyBxfM5wSpjec=
+    travis_codacy: P8ZumzHNi7cVzcJ6MuifbIV0w82bsgMVzk6KF6emd+Eh0q8FP19q1BmxgzQ19vRqwMG2d9G+2lBh95hKCg9hUdmVdq3XZ1HSVWVy3s1dPGocPKp1fsXtxUYNy4RCRfxDR61YSPCg6imIQ0asgWFQpnMl7m2Hc7P0gCGC7k4SO96vHzIK5OkbgieV/NXtFZ5kvS4lm9t7x3Jn8eXNuZPOEBgB3SerL87GQvG3gQi1I1atSzwBBoo2I4PNUR1kvcWUdmSAXD1wssz+rjTeKbXSn51xF8breJmi3DzIPXBmeYQifs/cAucHx2raWhGrwUbKqfbuafcEirCCwArGZmxROlBjvfMGlPtTAJOZNZM//gf0IrOAQ8WUkUBRYuOrCNEl5yhGzQxP3zw1NMXcqSLMkxhLhJAiL/h2vn04YyuXve0ITGs1DHt6ZtQJfqoHZwLibl9Lp1XsWJUtSMB1i1k36+0xPnJqK9dH71SrsdmyZpzR7yUIjzUjcpKnQ7AlxQ5M7ZruztNE6YjKFJtCBCRds8zfPBRKOoLyE8HEF8LQxYMKHi8KDV1SBaprr6d99DxtlEoPaWZujy3+arqEVOizb/BcygyQeIZNkwQOrw/6OiJQjLE65A9BZTh14C4gPiP6oOfUl5twHam6c8MUiSH0nrqGDr3VU+v5/iWpiXrvh8I=
