@@ -4,76 +4,28 @@ Subprocess utils.
 
 ## Status
 
-| Source     | Shields                                                                                                            |
-| ---------- | ------------------------------------------------------------------------------------------------------------------ |
-| Project    | ![release][release_shield] ![license][license_shield] ![dependents][dependents_shield]                             |
-| Health     | ![travis][travis_shield] ![codacy][codacy_shield] ![coverage][coverage_shield] ![readthedocs][readthedocs_shield]  |
-| Repository | ![issues][issues_shield] ![pulls][pulls_shield]                                                                    |
-| Publishers | ![pypi][pypi_shield] ![python_versions][python_versions_shield] ![pypi_downloads][pypi_downloads_shield]           |
-| Activity   | ![contributors][contributors_shield] ![monthly_commits][monthly_commits_shield] ![last_commit][last_commit_shield] |
+| Source     | Shields                                                                                                                         |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| Project    | ![release][release_shield] ![license][license_shield]  ![lines][lines_shield] ![languages][languages_shield]                    |
+| Health     | ![codacy][codacy_shield] ![readthedocs][readthedocs_shield] ![travis][travis_shield] ![codacy_coverage][codacy_coverage_shield] |
+| Repository | ![issues][issues_shield] ![issues_closed][issues_closed_shield] ![pulls][pulls_shield] ![pulls_closed][pulls_closed_shield]     |
+| Publishers | ![pypi][pypi_shield] ![python_versions][python_versions_shield] ![pypi_downloads][pypi_downloads_shield]                        |
+| Activity   | ![contributors][contributors_shield] ![monthly_commits][monthly_commits_shield] ![last_commit][last_commit_shield]              |
 
-## Installation
+## Installing
 
 ```bash
 pip install simple_pipes
 ```
 
-### Usage
-
-Pass a command in exec form:
-
-```python
-from simple_pipes import pipe_call, pipe_capture
-
-pipe_call(["echo", "Hello"])
-```
-
-This is equivalent to:
-
-```python
-import subprocess
-
-subprocess.Popen(["echo", "Hello"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-```
-
-Changing directory before execxution:
-
-```python
-pipe_call(["echo", "Hello"], cwd=".")
-```
-
-If you're running a command does not terminate, such as starting a server, the program will remain attached.
-
-To detach the running process on a given string output:
-
-```python
-wrapper = pipe_call(["echo", "Hello"], break_str="Hello"):
-```
-
-You must keep the wrapper object in scope or the detached process will be terminated in garbage collection.
-
-Often you want to run a process until it terminates and capture the entire output:
-
-```python
-output = pipe_capture(["echo", "Hello"], cwd=".")
-
-print(output)
-
->> Hello
-```
+## Usage
 
 ## Tests
 
-To run unit tests:
+To run unit tests and generate a coverage report:
 
 ```bash
 grunt tests:unit
-```
-
-To generate a coverage report:
-
-```bash
-grunt tests:coverage
 ```
 
 ## Documentation
@@ -106,18 +58,22 @@ To run formatters:
 grunt format
 ```
 
-Before commiting new code:
+Before committing new code:
 
 ```bash
 grunt precommit
 ```
 
-This will run linters, formaters, generate a test coverage report and the sphinx configuration.
+This will run linters, formatters, tests, generate a test coverage report and the sphinx configuration.
+
+## Continuous integration
+
+This repository uses Travis CI to build and test each commit. Formatting tasks and writing/generating documentation must be done before committing new code.
 
 ## Versioning
 
 This repository adheres to semantic versioning standards.
-For more inforamtion on semantic versioning visit [SemVer][semver].
+For more information on semantic versioning visit [SemVer][semver].
 
 Bump2version is used to version and tag changes.
 For example:
@@ -136,7 +92,7 @@ Please read this repository's guidelines on [CONTRIBUTING](CONTRIBUTING.md) for 
 
 ## Contributors
 
-- **Joel Lefkowitz** - _Initial work_ - [Joel Lefkowitz][joellefkowitz]
+- **Joel Lefkowitz** - _Initial work_ - [Joel Lefkowitz][author]
 
 [![Buy Me A Coffee][coffee_button]][coffee]
 
@@ -146,49 +102,42 @@ Lots of love to the open source community!
 
 ![Be kind][be_kind]
 
-<!-- Github links -->
-
-[pulls]: https://github.com/JoelLefkowitz/simple-pipes/pulls
-[issues]: https://github.com/JoelLefkowitz/simple-pipes/issues
+<!-- Public links -->
+[semver]: http://semver.org/
 
 <!-- External links -->
-
 [readthedocs]: https://simple-pipes.readthedocs.io/en/latest/
-[semver]: http://semver.org/
 [coffee]: https://www.buymeacoffee.com/joellefkowitz
 [coffee_button]: https://cdn.buymeacoffee.com/buttons/default-blue.png
 [be_kind]: https://media.giphy.com/media/osAcIGTSyeovPq6Xph/giphy.gif
 
 <!-- Acknowledgments -->
-
-[joellefkowitz]: https://github.com/JoelLefkowitz
+[author]: https://github.com/joellefkowitz
 
 <!-- Project shields -->
-
 [release_shield]: https://img.shields.io/github/v/tag/joellefkowitz/simple-pipes
 [license_shield]: https://img.shields.io/github/license/joellefkowitz/simple-pipes
-[dependents_shield]: https://img.shields.io/librariesio/dependent-repos/pypi/simple_pipes
+[lines_shield]: https://img.shields.io/tokei/lines/github/joellefkowitz/simple-pipes
+[languages_shield]: https://img.shields.io/github/languages/count/joellefkowitz/simple-pipes
 
 <!-- Health shields -->
-
-[travis_shield]: https://img.shields.io/travis/joellefkowitz/simple-pipes
-[codacy_shield]: https://img.shields.io/codacy/coverage/simple-pipes
-[coverage_shield]: https://img.shields.io/codacy/grade/simple-pipes
+[codacy_shield]: https://img.shields.io/codacy/grade/dc58dc1425df48c5be692f01029b732e
 [readthedocs_shield]: https://img.shields.io/readthedocs/simple-pipes
+[travis_shield]: https://img.shields.io/travis/com/joellefkowitz/simple-pipes
+[codacy_coverage_shield]: https://img.shields.io/codacy/coverage/dc58dc1425df48c5be692f01029b732e
 
 <!-- Repository shields -->
-
 [issues_shield]: https://img.shields.io/github/issues/joellefkowitz/simple-pipes
+[issues_closed_shield]: https://img.shields.io/github/issues-closed/joellefkowitz/simple-pipes
 [pulls_shield]: https://img.shields.io/github/issues-pr/joellefkowitz/simple-pipes
+[pulls_closed_shield]: https://img.shields.io/github/issues-pr-closed/joellefkowitz/simple-pipes
 
 <!-- Publishers shields -->
-
 [pypi_shield]: https://img.shields.io/pypi/v/simple_pipes
 [python_versions_shield]: https://img.shields.io/pypi/pyversions/simple_pipes
 [pypi_downloads_shield]: https://img.shields.io/pypi/dw/simple_pipes
 
 <!-- Activity shields -->
-
 [contributors_shield]: https://img.shields.io/github/contributors/joellefkowitz/simple-pipes
 [monthly_commits_shield]: https://img.shields.io/github/commit-activity/m/joellefkowitz/simple-pipes
 [last_commit_shield]: https://img.shields.io/github/last-commit/joellefkowitz/simple-pipes
